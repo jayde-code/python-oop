@@ -15,7 +15,7 @@ class Person(object):
 
     @staticmethod
     def main():
-        p = Person(input('이름 : '), int(input('출생년도(ex.1987) : ')), input('주소 : '))
+        p = Person(input('이름 : '), int(input('출생년도(ex.1980) : ')), input('주소 : '))
         print(f'회원 가입한 분의 성함은 {p.name} 님 이며')
         print(f'나이는 만 {p.get_age()}세, 주소는 {p.address} 입니다.')
 
