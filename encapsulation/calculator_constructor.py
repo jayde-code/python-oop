@@ -1,27 +1,27 @@
 class Calculator:
-
     def __init__(self, first, second):
         self.first = first
         self.second = second
 
-    def setdata(self, first, second):
-        self.first = first
-        self.second = second
+    # def setdata(self, first, second):
+    #     self.first = first
+    #     self.second = second
 
     def add(self):
-        return c.first + c.second
+        return self.first + self.second
 
     def sub(self):
-        return c.first - c.second
+        return self.first - self.second
 
     def mul(self):
-        return c.first * c.second
+        return self.first * self.second
 
     def div(self):
-        if c.first >= c.second:
-            return c.first / c.second
+        if self.first >= self.second:
+            return self.first / self.second
         else:
-            return c.second / c.first
+            return self.second / self.first
+
 
 if __name__ == '__main__':
     c = Calculator(2, 7)

@@ -10,6 +10,7 @@ class Grade:
     def avg(self):
         return self.sum() / 3
 
+
 if __name__ == '__main__':
     g = Grade(89, 82, 96)
     print(g.sum())
