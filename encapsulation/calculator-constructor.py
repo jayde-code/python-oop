@@ -4,9 +4,9 @@ class Calculator:
         self.first = first
         self.second = second
 
-    # def setdata(self, first, second):
-    #     self.first = first
-    #     self.second = second
+    def setdata(self, first, second):
+        self.first = first
+        self.second = second
 
     def add(self):
         return c.first + c.second
@@ -25,8 +25,8 @@ class Calculator:
 
 if __name__ == '__main__':
     c = Calculator(2, 7)
-    # c.setdata(2, 7)
-    print(id(c))
+    # c.setdata(12, 7)
+    # print(id(c))
     print(c.add())
     print(c.sub())
     print(c.mul())

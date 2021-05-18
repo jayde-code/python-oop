@@ -1,14 +1,15 @@
 class BodyMaxIndex:
 
     def __init__(self, weight, height):
-        self.weight = weight
-        self.height = height
+        self.w = weight
+        self.h = height
 
     # def setData(self, weight, height):
     #     self.weight = weight
     #     self.height = height
+
     def getBmi(self):
-        return self.weight / (self.height/100 * self.height/100)
+        return self.w / (self.h/100 * self.h/100)
 
 if __name__ == '__main__':
     b = BodyMaxIndex(78, 179)
