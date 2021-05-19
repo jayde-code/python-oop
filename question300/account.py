@@ -44,14 +44,20 @@ class Account(object):
     def main():
         a = Account("ㅅㅈ", 50000)
         b = Account("ㅂㅂ", 10000)
-        print(a.name, a.acc_no, a.balance)
-        print(b.name, b.acc_no, b.balance)
-        print(f'개설된 계좌수 : {a.get_account_num()}')
-        b.deposit(500)
-        a.withdraw(10000)
-        b.withdraw(20000)
-        a.display_info()
-        b.display_info()
+        c = Account("ㅎㅎ", 25000)
+        acc_list = [a, b, c]
+        # print(a.name, a.acc_no, a.balance)
+        # print(b.name, b.acc_no, b.balance)
+        # print(f'개설된 계좌수 : {a.get_account_num()}')
+        # b.deposit(500)
+        # a.withdraw(10000)
+        # b.withdraw(20000)
+        # a.display_info()
+        # b.display_info()
+
+        for i in acc_list:
+            if i.balance >= 20000:
+                i.display_info()
 
 
 Account.main()
