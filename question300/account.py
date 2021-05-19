@@ -8,6 +8,9 @@ class Account(object):
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
+        self.deposit_count = 0
+        self.deposit_log = []
+        self.withdraw_log = []
         self.bank = "SC은행"
         n1 = str(random.randint(0, 999)).zfill(3)
         n2 = str(random.randint(0, 99)).zfill(2)
@@ -23,6 +26,7 @@ class Account(object):
     def deposit(self, dep):
         if dep >= 1:
             self.balance += dep
+            self.deposit_log.append(dep)
             print(f'{self.name} 님의 계좌에 {dep}원이 입금되어 잔액은 {self.balance}원 입니다.')
         else:
             print('1원 이상부터 입금할 수 있습니다.')
@@ -40,6 +44,11 @@ class Account(object):
         print(f'계좌번호 : {self.acc_no}')
         print(f'잔액 : {self.balance}')
 
+    def deposit_history(self):
+        for amount in self.withdraw_log:
+            print(amount)
+
+
     @staticmethod
     def main():
         a = Account("ㅅㅈ", 50000)
@@ -50,14 +59,16 @@ class Account(object):
         # print(b.name, b.acc_no, b.balance)
         # print(f'개설된 계좌수 : {a.get_account_num()}')
         # b.deposit(500)
-        # a.withdraw(10000)
-        # b.withdraw(20000)
+        a.withdraw(10000)
+        a.withdraw(20000)
+        a.deposit_history()
         # a.display_info()
         # b.display_info()
 
-        for i in acc_list:
-            if i.balance >= 20000:
-                i.display_info()
+        # for i in acc_list:
+        #     if i.balance >= 20000:
+        #         i.display_info()
+
 
 
 Account.main()
