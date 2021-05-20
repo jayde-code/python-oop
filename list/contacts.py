@@ -6,12 +6,15 @@
 
 class Contacts(object):
     # con_lists = []
+    i = 1
 
     def __init__(self, name, phone, email, address):
+        self.index = Contacts.i
         self.name = name
         self.phone = phone
         self.email = email
         self.address = address
+        Contacts.i += 1
 
     def get_contact(self):
         return f'이름: {self.name}, 번호: {self.phone}, 이메일: {self.email}, 주소: {self.address}'
