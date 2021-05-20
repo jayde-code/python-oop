@@ -37,8 +37,9 @@ class Contacts(object):
                 else:
                     # for contact in Contacts.con_lists:
                     #     print(contact.get_contact())
-                    for contact in ls:
-                        print(contact.get_contact())
+                    # ls = list(enumerate(ls))
+                    for i, contact in enumerate(ls):
+                        print(i, contact.get_contact())
                 # if c is not None:
                 #     print(c.get_contact())
 
@@ -46,19 +47,24 @@ class Contacts(object):
                 if len(ls) == 0:
                     print('입력된 연락처가 없습니다.')
                 else:
-                    del_name = input('삭제할 연락처의 이름을 입력하세요: ')
                     for i, contact in enumerate(ls):
-                        if contact.name == del_name:
+                        print(i, contact.get_contact())
+                    del_index = int(input('삭제할 index_no: '))
+                    for i, contact in enumerate(ls):
+                        if i == del_index:
                             del ls[i]
                             print('정상적으로 삭제되었습니다.')
 
             elif menu == '4':
-                edit_name = input('수정할 이름: ')
-                edit_info = Contacts(edit_name, input('수정 전화번호: '), input('수정 이메일: '), input('수정 주소'))
-                for i, j in enumerate(ls):
-                    if j.name == edit_name:
-                        del ls[i]
-                        ls.append(edit_info)
+                if len(ls) == 0:
+                    print('입력된 연락처가 없습니다.')
+                else:
+                    edit_name = input('수정할 이름: ')
+                    edit_info = Contacts(edit_name, input('수정 전화번호: '), input('수정 이메일: '), input('수정 주소: '))
+                    for i, j in enumerate(ls):
+                        if j.name == edit_name:
+                            del ls[i]
+                            ls.append(edit_info)
 
             else:
                 print('잘못 입력 하셨습니다.')

@@ -9,8 +9,13 @@
 #
 # print(str(random.randint(0,999)).zfill(3))
 
-a = ['hong','gil','dong']
-b = list(enumerate(a))
-c = dict(enumerate(a))
-print(b)
-print(c)
+# a = ['hong','gil','dong']
+# b = list(enumerate(a))
+# c = dict(enumerate(a))
+# print(b)
+# print(c)
+
+letter = ['A', 'B', 'C']
+for i in enumerate(letter, start=1):
+    print(i)
+print(letter)
