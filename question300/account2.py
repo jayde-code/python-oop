@@ -5,9 +5,9 @@ class Account(object):
     acc_count = 0
 
     def __init__(self, name, money):
-        self.bank = "SC은행"
         self.name = name
         self.money = money
+        self.BANK_NAME = 'SC은행'
         fst_no = str(random.randint(1, 999)).zfill(3)
         snd_no = str(random.randint(1, 99)).zfill(2)
         trd_no = str(random.randint(1, 999999)).zfill(6)
@@ -29,7 +29,7 @@ class Account(object):
     def main():
         a = Account("Jay", 60000)
         b = Account("Kay", 40000)
-        print(a.bank, a.name, a.acc_no, a.money)
+        print(a.BANK_NAME, a.name, a.acc_no, a.money)
         b.deposit(1)
         b.deposit(20)
         print(f'개설된 계좌수는 {Account.get_acc_count()} 개 입니다.')

@@ -1,28 +1,44 @@
 class Stock(object):
     stock_list = []
 
-    def __init__(self, name, code, per, pbr, div_yield):
-        self.name = name
+    def __init__(self, code, name):
         self.code = code
-        self.per = per
-        self.pbr = pbr
-        self.div_yield = div_yield
+        self.name = name
+        # self.per = per
+        # self.pbr = pbr
+        # self.div_yield = div_yield
 
-    def get_info(self):
-        print(self.name, self.code, self.per, self.pbr, self.div_yield)
+    def to_string(self):
+        return f'종목코드: {self.code}, 종목명: {self.name}'
+
+    @staticmethod
+    def del_element(ls, input_code):
+        for i, j in enumerate(ls):
+            if j.code == input_code:
+                del ls[i]
 
     @staticmethod
     def main():
-        se = Stock("삼성전자", "005930", "15.79", "1.33", "2.83")
-        hd = Stock("현대차", "005380", "8.70", "0.35", "4.27")
-        lg = Stock("LG전자", "066570", "317.349", "0.69", "1.37")
-        Stock.stock_list.append(se)
-        Stock.stock_list.append(hd)
-        Stock.stock_list.append(lg)
-        # se.get_info()
-
-        for stock in Stock.stock_list:
-            print(f'종목코드: {stock.code} / PER: {stock.per}')
+        ls = []
+        while 1:
+            print('1. Create 2. Read 3. Update 4. Delete 0. Exit')
+            menu = input('input number -> ')
+            if menu == '0':
+                break
+            elif menu == '1':
+                ls.append(Stock(input('code? '), input('name? ')))
+            elif menu == '2':
+                for i in ls:
+                    print(i.to_string())
+            elif menu == '3':
+                input_code = input('What code(Upt) : ')
+                Stock.del_element(ls, input_code)
+                ls.append(Stock(input_code, input('name? ')))
+            elif menu == '4':
+                input_code = input('What code(Del): ')
+                Stock.del_element(ls, input_code)
+            else:
+                print('Wrong number')
 
 
 Stock.main()
