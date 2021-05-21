@@ -21,8 +21,8 @@ class Stock(object):
     def main():
         ls = []
         while 1:
-            print('1. Create 2. Read 3. Update 4. Delete 0. Exit')
-            menu = input('input number -> ')
+            print('1 Create 2 Read 3 Update 4 Delete 0 EXIT')
+            menu = input('INPUT>> ')
             if menu == '0':
                 break
             elif menu == '1':
