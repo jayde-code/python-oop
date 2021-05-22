@@ -7,6 +7,7 @@
 
 # import random
 #
+#
 # print(str(random.randint(0,999)).zfill(3))
 
 # a = ['hong','gil','dong']
