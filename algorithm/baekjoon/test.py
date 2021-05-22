@@ -15,6 +15,7 @@
 # print(b)
 # print(c)
 
+# enumerate
 letter = ['A', 'B', 'C']
 for i in enumerate(letter, start=1):
     print(i)
