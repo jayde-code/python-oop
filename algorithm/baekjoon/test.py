@@ -17,7 +17,29 @@
 # print(c)
 
 # enumerate
-letter = ['A', 'B', 'C']
-for i in enumerate(letter, start=1):
-    print(i)
-print(letter)
+# letter = ['A', 'B', 'C']
+# for i in enumerate(letter, start=1):
+#     print(i)
+# print(letter)
+
+# import random
+# print(random.randint(1, 1000))
+
+# from random import randint
+# print(randint(1, 1000))
+
+# from matplotlib import pyplot as plt
+#
+# print(plt.plot(x, y))
+
+import matplotlib.pyplot
+
+x = [1, 2, 3]
+y = [3, 2, 1]
+
+matplotlib.pyplot.plot(x, y)
+
+# from matplotlib.pyplot import *
+#
+#
+# print(plot(x, y))
