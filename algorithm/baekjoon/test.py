@@ -28,18 +28,21 @@
 # from random import randint
 # print(randint(1, 1000))
 
-# from matplotlib import pyplot as plt
-#
-# print(plt.plot(x, y))
-
-import matplotlib.pyplot
-
+from matplotlib import pyplot as plt
 x = [1, 2, 3]
 y = [3, 2, 1]
+plt.plot(x, y)
+plt.show()
 
-matplotlib.pyplot.plot(x, y)
+# import matplotlib.pyplot
+# x = [1, 2, 3]
+# y = [3, 2, 1]
+# matplotlib.pyplot.plot(x, y)
+# matplotlib.pyplot.show()
+
 
 # from matplotlib.pyplot import *
-#
-#
-# print(plot(x, y))
+# x = [1, 2, 3]
+# y = [3, 2, 1]
+# plot(x, y)
+# show()

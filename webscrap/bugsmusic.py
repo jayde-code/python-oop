@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+import csv
 
 
 class BugsMusic(object):
@@ -25,16 +26,16 @@ class BugsMusic(object):
                 # bugs = Bugs(input('URL? '))
                 bugs.url = input('URL? ')
             elif menu == '2':
-                print(f'Input URL is {bugs}')
                 soup = BeautifulSoup(urlopen(bugs.url), 'lxml')
-                n_artist = 0
+                n_rank = 0
+                print(f'Input URL is {bugs}\n')
                 print('-' * 40 + ' RANK TOP 100 ' + '-' * 40)
-                n_title = 0
-                for li1, li2 in zip(soup.find_all(name='p', attrs=({"class": "title"})),
-                                    soup.find_all(name='p', attrs=({"class": "artist"}))):
-                    n_artist += 1
-                    print(f'{str(n_artist).rjust(3, "0")}\' {li1.find("a").text} - {li2.find("a").text}')
-                print('-' * 95)
+                for li1, li2 in zip(soup.find_all("p", attrs=({"class": "title"})),
+                                    soup.find_all("p", attrs=({"class": "artist"}))):
+                    n_rank += 1
+                    print(f'{str(n_rank).rjust(3, "0")}\' {li1.find("a").text} - {li2.find("a").text}')
+                    if n_rank % 10 == 0:
+                        print('-' * 94)
             elif menu == '0':
                 exit()
             else:
