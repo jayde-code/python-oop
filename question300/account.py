@@ -60,7 +60,6 @@ class Account(object):
         for amount in self.withdraw_log:
             print(f'{amount}원 출금')
 
-
     @staticmethod
     def main():
         a = Account("ㅅㅈ", 500000)
@@ -87,7 +86,7 @@ class Account(object):
         # for i in acc_list:
         #     if i.balance >= 20000:
         #         i.display_info()
-        
+
         a.deposit_history()
         a.withdraw_history()
 
