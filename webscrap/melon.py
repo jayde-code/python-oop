@@ -23,7 +23,7 @@ class Melon(object):
                 melon.url = input('URL? ')
             elif menu == '2':
                 n_rank = 0
-                hdr = { 'User-Agent' : 'Mozilla/5.0'}
+                hdr = {'User-Agent': 'Mozilla/5.0'}
                 req = urllib.request.Request(melon.url, headers=hdr)
                 html = urllib.request.urlopen(req).read()
                 soup = BeautifulSoup(html, 'html.parser')
@@ -34,7 +34,8 @@ class Melon(object):
                 print('-' * 40 + ' RANK TOP 100 ' + '-' * 40)
                 for li1 in lst50:
                     n_rank += 1
-                    print(f'{str(n_rank).rjust(3, "0")}\'{li1.select_one(".ellipsis.rank01").a.text} '
+                    print(f'{str(n_rank).rjust(3, "0")}\' '
+                          f'{li1.select_one(".ellipsis.rank01").a.text} '
                           f'- {li1.select_one(".ellipsis.rank02").a.text}')
                     if n_rank % 10 == 0:
                         print('-' * 94)
