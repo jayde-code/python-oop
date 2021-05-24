@@ -87,6 +87,7 @@ class Account(object):
         # for i in acc_list:
         #     if i.balance >= 20000:
         #         i.display_info()
+        
         a.deposit_history()
         a.withdraw_history()
 
